@@ -1,0 +1,26 @@
+ <tr>
+    <td height="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table width="920"  border="0" cellspacing="0" cellpadding="0">
+      <tr align="left" valign="top">
+        <td width="192" height="479"><table width="192"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="38" class="topMenu LeftMenuHeader" ><a href= <%= categories_path %>>All Categories</a></td>
+          </tr>
+        </table>          
+          <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="216" valign="top">
+                <div class="RightMenu">
+                  <ul>
+                    
+                      <% @categories.each do |cat|%>
+                                                  <li > 
+                    <a href= <%= category_path(cat)%>><%=cat.name%></a></li>
+                        <%end%>
+    
+                  </ul>
+              </div></td>
+            </tr>
+          </table>

@@ -1,0 +1,36 @@
+<%if user_signed_in?%>
+<tr>
+    <td height="25">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="77" class="header"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="28%" align="left"><a href="http://www.templatesfreelance.com/"><img src= <%= asset_path("logo.jpg") %> alt="" width="262" height="77" border="0"></a></td>
+        <td width="72%" align="right">
+
+		<b>Welcome <%= current_user.email%></b>&nbsp;&nbsp;
+		<%= link_to "Log out", destroy_user_session_path, method: :delete%> &nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+  <%else%>
+  <tr>
+    <td height="25">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="77" class="header"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="28%" align="left"><a href="http://www.templatesfreelance.com/"><img src= <%= asset_path("logo.jpg") %> alt="" width="262" height="77" border="0"></a></td>
+        <td width="72%" align="right">
+    <a href="/users/sign_in">Login</a>&nbsp;&nbsp;
+    <a href="/users/sign_up">Registration</a> &nbsp;&nbsp;
+    <a href="#">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    </td>
+      </tr>
+    </table></td>
+  </tr>
+  <%end%>

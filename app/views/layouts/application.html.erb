@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title><%= content_for?(:title) ? yield(:title) : "ShoeStore"%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<%= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' =>true %>
+ <%= csrf_meta_tags %>
+</head>
+
+<body>
+<table width="920"  border="0" cellspacing="0" cellpadding="0" align="center">
+  <%= render "layouts/top_nav"%>
+  <%= render "layouts/top_menu"%>
+  <%= render "layouts/sidebar"%>
+   <%= render "layouts/side_banner"%>
+ <%= render "layouts/top_banner"%>
+          
+        <%=yield %>
+		
+		
+          
+                
+  <%= render "layouts/footer"%>
+</table>
+</body>
+</html>

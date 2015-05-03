@@ -1,0 +1,28 @@
+
+  <% shoes.each do |shoe| %>
+
+<table width="242" height="262"  border="0" cellpadding="0" cellspacing="0" class="Pr">
+            <tr>
+              <td valign="top" class="BodyBkg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="50" align="center"><%= shoe.name %><br>
+                    <%= shoe.category.try(:name)%></td>
+                  </tr>
+                <tr>
+                  <td height="142" align="center"><a href=<%=shoe_path(shoe)%> > <img src= <%= shoe.cover_url(:normal) %>  alt="" width="217" height="112" border="0"></a></td>
+                  </tr>
+                <tr>
+                  <td height="34" align="center">starting at <span class="style1"><%= shoe.price %></span></td>
+                  </tr>
+                <tr>
+                  <td align="center"><table width="210"  border="0" cellspacing="0" cellpadding="0">
+                    <tr align="center">
+                      <td height="35"><a href=<%=shoe_path(shoe)%> ><img src= <%= asset_path("bt1.jpg")%> alt="" width="101" height="29" border="0"></a></td>
+                      <td><img src= <%= asset_path("bt2.jpg")%> alt="" width="91" height="29" border="0"></a></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <%end%>

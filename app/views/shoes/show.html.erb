@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shoe.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shoe.description %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <img src=<%= @shoe.cover_url() %> />
+  
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @shoe.price %>
+</p>
+
+<%= link_to 'Edit', edit_shoe_path(@shoe) %> |
+<%= link_to 'Back', shoes_path %>
+<div>
+  <ul id = "book-comments">
+    <%@all_comments.each do |c|%>
+      <%unless c.new_record? %>
+        <%= render "comments/comment_item", comment: c%>
+      <%end%>
+    <%end%>
+  </ul>
+</div>
+
+
+<%= form_for(@new_comment, remote: true) do |f|%>
+  <%= f.text_area :comment%>
+  <%= f.hidden_field :commentable_type%>
+  <%= f.hidden_field :commentable_id%>
+  <br/>
+  <%= f.submit%>
+<%end%>
+
+<%= javascript_tag do%>
+  console.log("hello word");
+<% end %>
+<%= link_to 'Email a friend', '#',  
+:onclick => "$('#notify_friend_form').slideDown()" %> 
