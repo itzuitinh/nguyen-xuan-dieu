@@ -1,4 +1,4 @@
-== README
+Bài test cuối khóa
 Họ Và Tên: Nguyễn Xuân Diệu
 Email: Xuandieu.fetel@gmail.com
-<tt>rake doc:app</tt>.om
+<tt>rake doc:app</tt>.
